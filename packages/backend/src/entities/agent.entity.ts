@@ -12,6 +12,9 @@ export class AgentEntity {
 	@Column()
 	role!: 'Duelist' | 'Controller' | 'Sentinel' | 'Initiator';
 
+	@Column()
+	tier!: 'S' | 'A' | 'B';
+
 	@ManyToMany(() => AgentEntity)
 	@JoinTable({ name: 'agent_counters' })
 	counters!: AgentEntity[];

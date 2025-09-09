@@ -13,7 +13,7 @@ import {
   AlertCircle
 } from 'lucide-react';
 
-type Agent = { name: string; role: string };
+type Agent = { name: string; role: string; tier: 'S' | 'A' | 'B' };
 
 async function api<T>(path: string, init?: RequestInit): Promise<T> {
 	const res = await fetch(`/api${path}`, init);
@@ -96,18 +96,57 @@ export function App() {
 	);
 }
 
-function MultiSelect({ options, value, onChange, placeholder }: { 
+function AgentIcon({ agentName }: { agentName: string }) {
+	const getAgentIcon = (name: string) => {
+		const icons: Record<string, string> = {
+			'Jett': '🌪️', 'Raze': '💥', 'Reyna': '👁️', 'Phoenix': '🔥', 'Yoru': '⚡', 'Neon': '⚡', 'Iso': '🛡️', 'Tejo': '⚔️',
+			'Cypher': '📹', 'Sage': '💎', 'Killjoy': '🤖', 'Chamber': '💼', 'Deadlock': '🔒', 'Waylay': '🎯',
+			'Brimstone': '💨', 'Omen': '🌑', 'Viper': '☠️', 'Astra': '⭐', 'Harbor': '🌊', 'Clove': '🍀',
+			'Skye': '🦅', 'Sova': '🏹', 'KAY/O': '🤖', 'Fade': '👻', 'Gekko': '🐸', 'Vyse': '🎭'
+		};
+		return icons[name] || '🎮';
+	};
+
+	return (
+		<span className="text-lg mr-2" title={agentName}>
+			{getAgentIcon(agentName)}
+		</span>
+	);
+}
+
+function TierBadge({ tier }: { tier: 'S' | 'A' | 'B' }) {
+	const tierStyles = {
+		'S': 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-yellow-900 font-bold',
+		'A': 'bg-gradient-to-r from-blue-400 to-blue-600 text-blue-900 font-bold',
+		'B': 'bg-gradient-to-r from-gray-400 to-gray-600 text-gray-900 font-bold'
+	};
+
+	return (
+		<span className={`px-2 py-1 rounded-full text-xs ${tierStyles[tier]}`}>
+			{tier}
+		</span>
+	);
+}
+
+function MultiSelect({ options, value, onChange, placeholder, agents }: { 
 	options: string[]; 
 	value: string[]; 
 	onChange: (v: string[]) => void;
 	placeholder?: string;
+	agents?: Agent[];
 }) {
+	const getAgentTier = (agentName: string) => {
+		const agent = agents?.find(a => a.name === agentName);
+		return agent?.tier || 'B';
+	};
+
 	return (
-		<div className="space-y-2">
-			<div className="grid grid-cols-2 gap-2 max-h-48 overflow-y-auto">
+		<div className="space-y-4">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 max-h-64 overflow-y-auto">
 				{options.map(option => (
-					<label key={option} className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-700/50 cursor-pointer transition-colors">
+					<label key={option} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-700/50 cursor-pointer transition-colors border border-gray-600/30">
 						<input
+							disabled={value.length >= 5 && !value.includes(option)}
 							type="checkbox"
 							checked={value.includes(option)}
 							onChange={(e) => {
@@ -119,15 +158,21 @@ function MultiSelect({ options, value, onChange, placeholder }: {
 							}}
 							className="w-4 h-4 text-valorant-red bg-gray-700 border-gray-600 rounded focus:ring-valorant-red focus:ring-2"
 						/>
-						<span className="text-valorant-light text-sm">{option}</span>
+						<AgentIcon agentName={option} />
+						<div className="flex flex-col flex-1">
+							<span className="text-valorant-light text-sm font-medium">{option}</span>
+							<TierBadge tier={getAgentTier(option)} />
+						</div>
 					</label>
 				))}
 			</div>
 			{value.length > 0 && (
 				<div className="flex flex-wrap gap-2">
 					{value.map(selected => (
-						<span key={selected} className="bg-valorant-red/20 text-valorant-red px-3 py-1 rounded-full text-sm border border-valorant-red/30">
+						<span key={selected} className="bg-valorant-red/20 text-valorant-red px-3 py-2 rounded-full text-sm border border-valorant-red/30 flex items-center gap-2">
+							<AgentIcon agentName={selected} />
 							{selected}
+							<TierBadge tier={getAgentTier(selected)} />
 						</span>
 					))}
 				</div>
@@ -175,7 +220,7 @@ function Definicao({ agents, maps }: { agents: Agent[]; maps: string[] }) {
 						<MapPin size={20} />
 						Mapa
 					</label>
-					<select 
+					<select
 						value={map} 
 						onChange={(e) => setMap(e.target.value)}
 						className="select-field w-full max-w-xs"
@@ -191,14 +236,19 @@ function Definicao({ agents, maps }: { agents: Agent[]; maps: string[] }) {
 							<Shield className="text-green-400" size={20} />
 							Seu Time
 						</h3>
-						<MultiSelect options={agentNames} value={team} onChange={setTeam} />
+						<MultiSelect
+							options={agentNames}
+							value={team}
+							onChange={setTeam}
+							agents={agents}
+						/>
 					</div>
 					<div className="card">
 						<h3 className="text-xl font-semibold text-valorant-light mb-4 flex items-center gap-2">
 							<Swords className="text-red-400" size={20} />
 							Time Inimigo
 						</h3>
-						<MultiSelect options={agentNames} value={enemy} onChange={setEnemy} />
+						<MultiSelect options={agentNames} value={enemy} onChange={setEnemy} agents={agents} />
 					</div>
 				</div>
 
@@ -304,7 +354,7 @@ function Aleatorizador({ maps }: { maps: string[] }) {
 						<MapPin size={20} />
 						Mapa (opcional)
 					</label>
-					<select 
+					<select
 						value={map} 
 						onChange={(e) => setMap(e.target.value)}
 						className="select-field w-full max-w-xs"
@@ -417,7 +467,7 @@ function Autocomplete({ agents, maps }: { agents: Agent[]; maps: string[] }) {
 						<Users className="text-blue-400" size={20} />
 						Agentes Já Escolhidos
 					</h3>
-					<MultiSelect options={agentNames} value={picks} onChange={setPicks} />
+					<MultiSelect options={agentNames} value={picks} onChange={setPicks} agents={agents} />
 					{picks.length > 0 && (
 						<div className="mt-4 text-sm text-gray-400">
 							Faltam {5 - picks.length} agente(s) para completar o time

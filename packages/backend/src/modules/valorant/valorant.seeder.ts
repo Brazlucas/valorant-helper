@@ -20,7 +20,7 @@ export class ValorantSeeder implements OnApplicationBootstrap {
 		if (agentsCount > 0) return; // already seeded
 		const dataDir = path.resolve(__dirname, '../../data');
 		const agentsJson = JSON.parse(fs.readFileSync(path.join(dataDir, 'agents.json'), 'utf-8')) as Array<{
-			name: string; role: any; counters: string[]; tweakAgainst: string[]; mapPreferences: string[]; synergies: string[];
+			name: string; role: any; tier: 'S' | 'A' | 'B'; counters: string[]; tweakAgainst: string[]; mapPreferences: string[]; synergies: string[];
 		}>;
 		const mapsJson = JSON.parse(fs.readFileSync(path.join(dataDir, 'maps.json'), 'utf-8')) as string[];
 		const tipsJson = JSON.parse(fs.readFileSync(path.join(dataDir, 'tips.json'), 'utf-8')) as Record<string, string[]>;
@@ -34,7 +34,7 @@ export class ValorantSeeder implements OnApplicationBootstrap {
 
 		const agentEntities = new Map<string, AgentEntity>();
 		for (const a of agentsJson) {
-			const ent = this.agentRepo.create({ name: a.name, role: a.role });
+			const ent = this.agentRepo.create({ name: a.name, role: a.role, tier: a.tier });
 			await this.agentRepo.save(ent);
 			agentEntities.set(a.name.toLowerCase(), ent);
 		}

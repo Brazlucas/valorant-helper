@@ -1,25 +1,236 @@
 [
-  {"name":"Jett","role":"Duelist","counters":["Cypher","Sage","Killjoy"],"tweakAgainst":["Skye","Sova","Breach"],"mapPreferences":["Bind","Haven","Ascent","Sunset"],"synergies":["Skye","Sova","Omen","Viper"]},
-  {"name":"Raze","role":"Duelist","counters":["Cypher","Killjoy","Chamber"],"tweakAgainst":["Sage","Skye","Fade"],"mapPreferences":["Bind","Split","Lotus","Fracture"],"synergies":["Breach","Skye","Brimstone","Fade"]},
-  {"name":"Cypher","role":"Sentinel","counters":["Jett","Raze","Neon"],"tweakAgainst":["Raze","Sova","Fade"],"mapPreferences":["Bind","Split","Haven"],"synergies":["Viper","Brimstone","Sova","Omen"]},
-  {"name":"Brimstone","role":"Controller","counters":["Killjoy","Chamber","Cypher"],"tweakAgainst":["Viper","Omen","Astra"],"mapPreferences":["Bind","Fracture","Haven","Pearl"],"synergies":["Raze","Skye","Sage","Fade"]},
-  {"name":"Skye","role":"Initiator","counters":["Jett","Omen","Viper"],"tweakAgainst":["Sage","Killjoy","Chamber"],"mapPreferences":["Haven","Ascent","Breeze","Lotus"],"synergies":["Jett","Raze","Brimstone","Sova"]},
-  {"name":"Sova","role":"Initiator","counters":["Viper","Cypher","Killjoy"],"tweakAgainst":["Jett","Omen","Chamber"],"mapPreferences":["Ascent","Icebox","Haven","Bind"],"synergies":["Omen","Jett","Cypher","Viper"]},
-  {"name":"Omen","role":"Controller","counters":["Cypher","Sage","Killjoy"],"tweakAgainst":["Skye","Sova","Fade"],"mapPreferences":["Ascent","Haven","Bind","Split"],"synergies":["Jett","Sova","Raze","Cypher"]},
-  {"name":"Sage","role":"Sentinel","counters":["Raze","Jett","Neon"],"tweakAgainst":["Brimstone","Viper","Fade"],"mapPreferences":["Icebox","Haven","Split","Pearl"],"synergies":["Brimstone","Sova","Jett","Skye"]},
-  {"name":"Killjoy","role":"Sentinel","counters":["Omen","Jett","Raze"],"tweakAgainst":["Raze","Sova","Fade"],"mapPreferences":["Ascent","Split","Bind","Fracture"],"synergies":["Sova","Brimstone","Cypher","Viper"]},
-  {"name":"Viper","role":"Controller","counters":["Sage","Omen","Astra"],"tweakAgainst":["Sova","Skye","Fade"],"mapPreferences":["Icebox","Breeze","Bind","Pearl"],"synergies":["Cypher","Raze","Killjoy","Sage"]},
-  {"name":"Reyna","role":"Duelist","counters":["Sage","Cypher","Killjoy"],"tweakAgainst":["Skye","Sova","Fade"],"mapPreferences":["Bind","Haven","Ascent","Split"],"synergies":["Skye","Omen","Viper","Sova"]},
-  {"name":"Phoenix","role":"Duelist","counters":["Cypher","Sage","Killjoy"],"tweakAgainst":["Skye","Sova","Fade"],"mapPreferences":["Bind","Haven","Split","Fracture"],"synergies":["Skye","Omen","Brimstone","Sova"]},
-  {"name":"Yoru","role":"Duelist","counters":["Cypher","Sage","Killjoy"],"tweakAgainst":["Skye","Sova","Fade"],"mapPreferences":["Bind","Haven","Ascent","Lotus"],"synergies":["Skye","Omen","Sova","Viper"]},
-  {"name":"Astra","role":"Controller","counters":["Omen","Viper","Brimstone"],"tweakAgainst":["Sova","Skye","Fade"],"mapPreferences":["Ascent","Haven","Breeze","Pearl"],"synergies":["Sova","Skye","Jett","Raze"]},
-  {"name":"KAY/O","role":"Initiator","counters":["Viper","Omen","Astra"],"tweakAgainst":["Sage","Killjoy","Chamber"],"mapPreferences":["Fracture","Bind","Haven","Split"],"synergies":["Raze","Skye","Brimstone","Sova"]},
-  {"name":"Chamber","role":"Sentinel","counters":["Jett","Raze","Neon"],"tweakAgainst":["Sova","Skye","Fade"],"mapPreferences":["Breeze","Icebox","Ascent","Pearl"],"synergies":["Sova","Omen","Viper","Cypher"]},
-  {"name":"Neon","role":"Duelist","counters":["Sage","Cypher","Killjoy"],"tweakAgainst":["Skye","Sova","Fade"],"mapPreferences":["Fracture","Pearl","Lotus","Sunset"],"synergies":["Skye","Omen","Sova","KAY/O"]},
-  {"name":"Fade","role":"Initiator","counters":["Cypher","Sage","Killjoy"],"tweakAgainst":["Skye","Sova","Breach"],"mapPreferences":["Bind","Haven","Split","Fracture"],"synergies":["Raze","Skye","Brimstone","Omen"]},
-  {"name":"Harbor","role":"Controller","counters":["Omen","Viper","Astra"],"tweakAgainst":["Sova","Skye","Fade"],"mapPreferences":["Pearl","Lotus","Breeze","Sunset"],"synergies":["Sova","Skye","Jett","Raze"]},
-  {"name":"Gekko","role":"Initiator","counters":["Cypher","Sage","Killjoy"],"tweakAgainst":["Skye","Sova","Fade"],"mapPreferences":["Lotus","Sunset","Pearl","Abyss"],"synergies":["Raze","Skye","Brimstone","Sova"]},
-  {"name":"Deadlock","role":"Sentinel","counters":["Jett","Raze","Neon"],"tweakAgainst":["Sova","Skye","Fade"],"mapPreferences":["Abyss","Sunset","Pearl","Lotus"],"synergies":["Sova","Omen","Viper","Cypher"]},
-  {"name":"Iso","role":"Duelist","counters":["Sage","Cypher","Killjoy"],"tweakAgainst":["Skye","Sova","Fade"],"mapPreferences":["Abyss","Sunset","Pearl","Lotus"],"synergies":["Skye","Omen","Sova","KAY/O"]},
-  {"name":"Clove","role":"Controller","counters":["Omen","Viper","Astra"],"tweakAgainst":["Sova","Skye","Fade"],"mapPreferences":["Abyss","Sunset","Pearl","Lotus"],"synergies":["Sova","Skye","Jett","Raze"]}
+   {
+     "name": "Jett",
+     "role": "Duelist",
+     "tier": "S",
+     "counters": ["Cypher", "Sage", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Breach"],
+     "mapPreferences": ["Bind", "Haven", "Ascent", "Sunset"],
+     "synergies": ["Skye", "Sova", "Omen", "Viper"]
+   },
+   {
+     "name": "Raze",
+     "role": "Duelist",
+     "tier": "S",
+     "counters": ["Cypher", "Killjoy", "Chamber"],
+     "tweakAgainst": ["Sage", "Skye", "Fade"],
+     "mapPreferences": ["Bind", "Split", "Lotus", "Fracture"],
+     "synergies": ["Breach", "Skye", "Brimstone", "Fade"]
+   },
+   {
+     "name": "Cypher",
+     "role": "Sentinel",
+     "tier": "S",
+     "counters": ["Jett", "Raze", "Neon"],
+     "tweakAgainst": ["Raze", "Sova", "Fade"],
+     "mapPreferences": ["Bind", "Split", "Haven"],
+     "synergies": ["Viper", "Brimstone", "Sova", "Omen"]
+   },
+   {
+     "name": "Brimstone",
+     "role": "Controller",
+     "tier": "A",
+     "counters": ["Killjoy", "Chamber", "Cypher"],
+     "tweakAgainst": ["Viper", "Omen", "Astra"],
+     "mapPreferences": ["Bind", "Fracture", "Haven", "Pearl"],
+     "synergies": ["Raze", "Skye", "Sage", "Fade"]
+   },
+   {
+     "name": "Skye",
+     "role": "Initiator",
+     "tier": "S",
+     "counters": ["Jett", "Omen", "Viper"],
+     "tweakAgainst": ["Sage", "Killjoy", "Chamber"],
+     "mapPreferences": ["Haven", "Ascent", "Breeze", "Lotus"],
+     "synergies": ["Jett", "Raze", "Brimstone", "Sova"]
+   },
+   {
+     "name": "Sova",
+     "role": "Initiator",
+     "tier": "A",
+     "counters": ["Viper", "Cypher", "Killjoy"],
+     "tweakAgainst": ["Jett", "Omen", "Chamber"],
+     "mapPreferences": ["Ascent", "Icebox", "Haven", "Bind"],
+     "synergies": ["Omen", "Jett", "Cypher", "Viper"]
+   },
+   {
+     "name": "Omen",
+     "role": "Controller",
+     "tier": "S",
+     "counters": ["Cypher", "Sage", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Fade"],
+     "mapPreferences": ["Ascent", "Haven", "Bind", "Split"],
+     "synergies": ["Jett", "Sova", "Raze", "Cypher"]
+   },
+   {
+     "name": "Sage",
+     "role": "Sentinel",
+     "tier": "A",
+     "counters": ["Raze", "Jett", "Neon"],
+     "tweakAgainst": ["Brimstone", "Viper", "Fade"],
+     "mapPreferences": ["Icebox", "Haven", "Split", "Pearl"],
+     "synergies": ["Brimstone", "Sova", "Jett", "Skye"]
+   },
+   {
+     "name": "Killjoy",
+     "role": "Sentinel",
+     "tier": "A",
+     "counters": ["Omen", "Jett", "Raze"],
+     "tweakAgainst": ["Raze", "Sova", "Fade"],
+     "mapPreferences": ["Ascent", "Split", "Bind", "Fracture"],
+     "synergies": ["Sova", "Brimstone", "Cypher", "Viper"]
+   },
+   {
+     "name": "Viper",
+     "role": "Controller",
+     "tier": "S",
+     "counters": ["Sage", "Omen", "Astra"],
+     "tweakAgainst": ["Sova", "Skye", "Fade"],
+     "mapPreferences": ["Icebox", "Breeze", "Bind", "Pearl"],
+     "synergies": ["Cypher", "Raze", "Killjoy", "Sage"]
+   },
+   {
+     "name": "Reyna",
+     "role": "Duelist",
+     "tier": "B",
+     "counters": ["Sage", "Cypher", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Fade"],
+     "mapPreferences": ["Bind", "Haven", "Ascent", "Split"],
+     "synergies": ["Skye", "Omen", "Viper", "Sova"]
+   },
+   {
+     "name": "Phoenix",
+     "role": "Duelist",
+     "tier": "B",
+     "counters": ["Cypher", "Sage", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Fade"],
+     "mapPreferences": ["Bind", "Haven", "Split", "Fracture"],
+     "synergies": ["Skye", "Omen", "Brimstone", "Sova"]
+   },
+   {
+     "name": "Yoru",
+     "role": "Duelist",
+     "tier": "B",
+     "counters": ["Cypher", "Sage", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Fade"],
+     "mapPreferences": ["Bind", "Haven", "Ascent", "Lotus"],
+     "synergies": ["Skye", "Omen", "Sova", "Viper"]
+   },
+   {
+     "name": "Astra",
+     "role": "Controller",
+     "tier": "A",
+     "counters": ["Omen", "Viper", "Brimstone"],
+     "tweakAgainst": ["Sova", "Skye", "Fade"],
+     "mapPreferences": ["Ascent", "Haven", "Breeze", "Pearl"],
+     "synergies": ["Sova", "Skye", "Jett", "Raze"]
+   },
+   {
+     "name": "KAY/O",
+     "role": "Initiator",
+     "tier": "A",
+     "counters": ["Viper", "Omen", "Astra"],
+     "tweakAgainst": ["Sage", "Killjoy", "Chamber"],
+     "mapPreferences": ["Fracture", "Bind", "Haven", "Split"],
+     "synergies": ["Raze", "Skye", "Brimstone", "Sova"]
+   },
+   {
+     "name": "Chamber",
+     "role": "Sentinel",
+     "tier": "B",
+     "counters": ["Jett", "Raze", "Neon"],
+     "tweakAgainst": ["Sova", "Skye", "Fade"],
+     "mapPreferences": ["Breeze", "Icebox", "Ascent", "Pearl"],
+     "synergies": ["Sova", "Omen", "Viper", "Cypher"]
+   },
+   {
+     "name": "Neon",
+     "role": "Duelist",
+     "tier": "A",
+     "counters": ["Sage", "Cypher", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Fade"],
+     "mapPreferences": ["Fracture", "Pearl", "Lotus", "Sunset"],
+     "synergies": ["Skye", "Omen", "Sova", "KAY/O"]
+   },
+   {
+     "name": "Fade",
+     "role": "Initiator",
+     "tier": "S",
+     "counters": ["Cypher", "Sage", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Breach"],
+     "mapPreferences": ["Bind", "Haven", "Split", "Fracture"],
+     "synergies": ["Raze", "Skye", "Brimstone", "Omen"]
+   },
+   {
+     "name": "Harbor",
+     "role": "Controller",
+     "tier": "B",
+     "counters": ["Omen", "Viper", "Astra"],
+     "tweakAgainst": ["Sova", "Skye", "Fade"],
+     "mapPreferences": ["Pearl", "Lotus", "Breeze", "Sunset"],
+     "synergies": ["Sova", "Skye", "Jett", "Raze"]
+   },
+   {
+     "name": "Gekko",
+     "role": "Initiator",
+     "tier": "A",
+     "counters": ["Cypher", "Sage", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Fade"],
+     "mapPreferences": ["Lotus", "Sunset", "Pearl", "Abyss"],
+     "synergies": ["Raze", "Skye", "Brimstone", "Sova"]
+   },
+   {
+     "name": "Deadlock",
+     "role": "Sentinel",
+     "tier": "B",
+     "counters": ["Jett", "Raze", "Neon"],
+     "tweakAgainst": ["Sova", "Skye", "Fade"],
+     "mapPreferences": ["Abyss", "Sunset", "Pearl", "Lotus"],
+     "synergies": ["Sova", "Omen", "Viper", "Cypher"]
+   },
+   {
+     "name": "Iso",
+     "role": "Duelist",
+     "tier": "A",
+     "counters": ["Sage", "Cypher", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Fade"],
+     "mapPreferences": ["Abyss", "Sunset", "Pearl", "Lotus"],
+     "synergies": ["Skye", "Omen", "Sova", "KAY/O"]
+   },
+   {
+     "name": "Clove",
+     "role": "Controller",
+     "tier": "A",
+     "counters": ["Omen", "Viper", "Astra"],
+     "tweakAgainst": ["Sova", "Skye", "Fade"],
+     "mapPreferences": ["Abyss", "Sunset", "Pearl", "Lotus"],
+     "synergies": ["Sova", "Skye", "Jett", "Raze"]
+   },
+   {
+     "name": "Vyse",
+     "role": "Sentinel",
+     "tier": "A",
+     "counters": ["Cypher", "Sage", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Fade"],
+     "mapPreferences": ["Abyss", "Sunset", "Pearl", "Lotus"],
+     "synergies": ["Raze", "Skye", "Brimstone", "Sova"]
+   },
+   {
+     "name": "Tejo",
+     "role": "Initiator",
+     "tier": "S",
+     "counters": ["Sage", "Cypher", "Killjoy"],
+     "tweakAgainst": ["Skye", "Sova", "Fade"],
+     "mapPreferences": ["Abyss", "Sunset", "Pearl", "Lotus"],
+     "synergies": ["Skye", "Omen", "Sova", "KAY/O"]
+   },
+   {
+     "name": "Waylay",
+     "role": "Duelist",
+     "tier": "A",
+     "counters": ["Jett", "Raze", "Neon"],
+     "tweakAgainst": ["Sova", "Skye", "Fade"],
+     "mapPreferences": ["Abyss", "Sunset", "Pearl", "Lotus"],
+     "synergies": ["Sova", "Omen", "Viper", "Cypher"]
+   }
 ]

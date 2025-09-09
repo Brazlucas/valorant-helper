@@ -8,6 +8,7 @@ import { TipEntity } from '../../entities/tip.entity';
 export type Agent = {
 	name: string;
 	role: 'Duelist' | 'Controller' | 'Sentinel' | 'Initiator';
+	tier: 'S' | 'A' | 'B';
 };
 
 @Injectable()
@@ -20,7 +21,7 @@ export class ValorantService {
 
 	async getAgents(): Promise<Agent[]> {
 		const agents = await this.agentRepo.find();
-		return agents.map(a => ({ name: a.name, role: a.role }));
+		return agents.map(a => ({ name: a.name, role: a.role, tier: a.tier }));
 	}
 
 	async getMaps(): Promise<string[]> {
@@ -77,15 +78,28 @@ export class ValorantService {
 
 	private scoreAgent(agent: AgentEntity, map: string, currentPicks: string[], allAgents: AgentEntity[]): number {
 		let score = 0;
-		if ((agent.mapPreferences || []).some(m => m.name.toLowerCase() === map.toLowerCase())) score += 3;
+		
+		// Tier priority (mais importante)
+		const tierScores = { 'S': 10, 'A': 6, 'B': 3 };
+		score += tierScores[agent.tier];
+		
+		// map preference bonus
+		if ((agent.mapPreferences || []).some(m => m.name.toLowerCase() === map.toLowerCase())) score += 4;
+		
+		// role diversity bonus
 		const currentAgents = currentPicks
 			.map(p => allAgents.find(a => a.name.toLowerCase() === p.toLowerCase()))
 			.filter(Boolean) as AgentEntity[];
 		const roles = new Set(currentAgents.map(a => a.role));
-		if (!roles.has(agent.role)) score += 2; else score += 0.5;
+		if (!roles.has(agent.role)) score += 3; else score += 1;
+		
+		// synergy bonus
 		const lowerPicks = currentPicks.map(p => p.toLowerCase());
-		score += (agent.synergies || []).filter(s => lowerPicks.includes(s.name.toLowerCase())).length * 1.5;
+		score += (agent.synergies || []).filter(s => lowerPicks.includes(s.name.toLowerCase())).length * 2;
+		
+		// avoid duplicates
 		if (lowerPicks.includes(agent.name.toLowerCase())) score = -Infinity;
+		
 		return score;
 	}
 }
