@@ -1,0 +1,77 @@
+{
+  "map:bind": [
+    "Controle o espaço do Hookah e do Banho para execuções rápidas.",
+    "Use controladores para cortar CT e Heaven nos plants A/B.",
+    "Teleportadores são essenciais para rotações rápidas entre sites."
+  ],
+  "map:ascent": [
+    "Foque em meio para dividir A ou B.",
+    "Sentinelas fortes para segurar avanço no meio.",
+    "Controle de Catwalk é crucial para o sucesso."
+  ],
+  "map:haven": [
+    "Mapa com 3 sites - foque em rotações e controle de meio.",
+    "A site é mais aberto, B e C são mais fechados.",
+    "Garagem é ponto chave para rotações."
+  ],
+  "map:split": [
+    "Mapa vertical - use agentes com mobilidade.",
+    "Controle de meio é fundamental.",
+    "Rope é ponto chave para rotações."
+  ],
+  "map:fracture": [
+    "Mapa único com 2 lados - foque em flancos.",
+    "Use agentes com utilidades de longo alcance.",
+    "Controle de Dish é crucial."
+  ],
+  "map:lotus": [
+    "Mapa com 3 sites e rotações complexas.",
+    "Use agentes com utilidades de área.",
+    "Controle de meio é essencial."
+  ],
+  "map:icebox": [
+    "Mapa vertical com muitas alturas.",
+    "Use agentes com utilidades de área e controle.",
+    "Controle de meio e Kitchen são chaves."
+  ],
+  "map:breeze": [
+    "Mapa aberto - use agentes com utilidades de longo alcance.",
+    "Controle de meio é fundamental.",
+    "Use smokes para controlar ângulos longos."
+  ],
+  "map:pearl": [
+    "Mapa com muitas rotas e flancos.",
+    "Use agentes com utilidades de área.",
+    "Controle de meio e flancos são essenciais."
+  ],
+  "map:sunset": [
+    "Mapa com design único e rotações específicas.",
+    "Use agentes com utilidades versáteis.",
+    "Controle de meio é crucial para o sucesso."
+  ],
+  "map:abyss": [
+    "Mapa mais recente com mecânicas únicas.",
+    "Use agentes com utilidades adaptáveis.",
+    "Controle de pontos chave é fundamental."
+  ],
+  "vs:jett+raze+neon": [
+    "Time muito agressivo - foque em defesa sólida.",
+    "Use sentinelas para controlar entradas.",
+    "Controle de utilidades é crucial."
+  ],
+  "vs:cypher+killjoy+chamber": [
+    "Time defensivo - use utilidades para limpar setups.",
+    "Foque em execuções coordenadas.",
+    "Use smokes para bloquear visão das câmeras/torretas."
+  ],
+  "vs:viper+omen+astra": [
+    "Muitos smokes - use utilidades para limpar.",
+    "Foque em execuções rápidas.",
+    "Use flashes para cegar controladores."
+  ],
+  "vs:skye+sova+fade": [
+    "Muitas utilidades de informação - jogue defensivo.",
+    "Use smokes para bloquear visão.",
+    "Foque em picks individuais."
+  ]
+}

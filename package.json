@@ -1,0 +1,19 @@
+{
+  "name": "valorant-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:backend": "npm --workspace @app/backend run dev",
+    "build:backend": "npm --workspace @app/backend run build",
+    "start:backend": "npm --workspace @app/backend run start",
+    "dev:frontend": "npm --workspace @app/frontend run dev",
+    "build:frontend": "npm --workspace @app/frontend run build",
+    "preview:frontend": "npm --workspace @app/frontend run preview",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
